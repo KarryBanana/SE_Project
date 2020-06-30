@@ -1,0 +1,37 @@
+{% extends 'topic_base.html' %}
+{% load guardian_tags %}
+{% block content %}
+{% for topic_p in topic_post %}
+<article class="post post-1" >
+    <header class="entry-header" >
+{#        {% if topic_p.im %}#}
+{#        <h3 class="entry-title">#}
+{##}
+{#            <a href="{% url 'topic:topic_detailmore' topic_p.id %}"><span style="color:red">[精华] {{ topic_p.title }}</span></a>#}
+{##}
+{#        </h3>#}
+{##}
+{#        {% endif %}#}
+{#        {% if not topic_p.im %}#}
+        <h3 class="entry-title">
+            <a href="{% url 'topic:topic_detailmore' topic_p.id %}"><span>{{ topic_p.title }}</span></a>
+        </h3>
+{#        {% endif %}#}
+        <div class="entry-meta">
+
+            <span class="post-date"><time class="entry-date"
+                        datetime="{{ topic_p.created_time}}">{{ topic_p.created_time}}</time></span>
+            <span class="topic-author">作者：{{topic_p.author}}</span>
+
+            <span class="views-count">{{ topic_p.views }} 阅读</span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{ topic_p.excerpt }}...</p>
+    </div>
+</article>
+    <hr>
+{% empty %}
+    <div class="no-post"><p>没有搜索结果！</p></div>
+{% endfor %}
+{% endblock %}

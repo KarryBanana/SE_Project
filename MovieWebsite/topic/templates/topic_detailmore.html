@@ -1,0 +1,21 @@
+{% extends 'topic_base.html' %}
+{% block content %}
+    <article class="post post-{{topicpost.pk}}">
+    <header class="entry-header">
+        <h1 class="entry-title">
+            {{ topicpost.title }}
+        </h1>
+        <div class="entry-meta">
+
+            <span class="post-date"><a href="#"><time class="entry-date"
+                        datetime="{{topicpost.created_time}}">{{topicpost.created_time}}</time></a></span>
+            <span class="topicpost-author"><a href="#">{{topicpost.author}}</a></span>
+
+            <span class="views-count"><a href="#">{{ topicpost.views }} 阅读</a></span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{topicpost.body|safe}}</p>
+    </div>
+</article>
+{% endblock %}

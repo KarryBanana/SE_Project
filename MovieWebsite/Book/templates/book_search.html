@@ -1,0 +1,41 @@
+
+{% extends 'book_base.html' %}
+
+{% block title %}书籍搜索结果{% endblock %}
+
+{% block content %}
+{% if not books %}
+<body>
+    <h1>没有搜索结果哦</h1>
+</body>
+{% endif %}
+{% if books %}
+{%for book in books%}
+<body>
+    <div class="container" >
+        <div class="row">
+            <div class="col-sm-8">
+                <h3>{{ book.title }}</h3>
+                <br>
+                <div class="col-md-3 col-sm-5 col-xs-6">
+                    <a href="{% url 'book_detail' movie.id %}" data-gallery-id="gallery-1">
+                        <img src="{{ book.pic }}" alt="照片无法显示" class="img-responsive lazyload book-pic" />
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-6 col-md-offset-1">
+                    <p>
+                        作者：{{ book.author }}<br>
+                        介绍：{{ book.intro }}<br>
+                        评分：{{ book.rate}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+{% endfor %}
+{% endif %}
+
+{% endblock %}

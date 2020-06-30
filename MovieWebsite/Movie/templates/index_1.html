@@ -1,0 +1,109 @@
+
+{% extends 'index_base.html' %}
+
+{% block title %}主页{% endblock %}
+
+{% block content %}
+<br>
+<h2>推荐电影</h2>
+<div class="row">
+    {% for movie in movies %}
+    <div class="col-sm-3 col-xs-4 text-center">
+        <a href="{% url 'movie_detail' movie.id %}" data-gallery-id="gallery-1">
+            <img src="{{movie.image}}" alt="照片无法显示" class="img-responsive lazyload movie-img" />
+            <p class="text-center">
+                    <span class="" style="color:#444">
+                        {%if movie.title|length >= 8 %}
+                            {{movie.title|slice:'6'}} ...
+                        {%else%}
+                            {{movie.title}}
+                        {%endif%}
+                    </span>
+            </p>
+        </a>
+        <p class="text-center movie-rating">
+            <span class="label label-primary">评分: {{movie.rating}}</span>
+        </p>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<div>
+    <h2>推荐书籍</h2>
+    <div class="row">
+        {% for book in books %}
+        <div class="col-sm-2 col-xs-4 text-center">
+            <a href="{% url 'book_detail' book.id %}">
+                <img src="{{book.pic}}" alt="照片无法显示" class="img-responsive lazyload img" />
+                <p class="text-center">
+                    <span class="book-title" style="color:#444">
+                        {%if book.title|length >= 8 %}
+                        {{book.title|slice:'6'}} ...
+                        {%else%}
+                        {{book.title}}
+                        {%endif%}
+                    </span>
+                </p>
+            </a>
+            <p class="text-center book-rating">
+                <span class="label label-primary">评分: {{book.rate}}</span>
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div>
+    <h2>热门评论</h2>
+    {%for topic in topicAll%}
+    <article class="post post-1">
+        <header class="entry-header">
+            <h3 class="entry-title">
+                <a href=" {% url 'topic:topic_detail' topic.id %} ">{{ topic.name }}</a>
+            </h3>
+            <div class="entry-meta">
+                <h5>小组成员：
+                    {% for mem in topic.members.all%}
+                    {{mem}}
+                    {% endfor %}
+                </h5>
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            <div class="read-more cl-effect-14">
+                <a href="{% url 'topic:topic_detail' topic.id %}" class="more-link">查看小组<span class="meta-nav">→</span></a>
+            </div>
+        </div>
+    </article>
+    <hr>
+    {% empty %}
+    <div class="no-post">暂时还没有小组！</div>
+    {% endfor %}
+</div>
+<div>
+    <h2>热门话题</h2>
+    {%for group in groupAll%}
+    <article class="post post-1">
+        <header class="entry-header">
+            <h3 class="entry-title">
+                <a href=" {% url 'group_func:group_detail' group.id %} ">{{ group.name }}</a>
+            </h3>
+            <div class="entry-meta">
+                <h5>小组成员：
+                    {% for mem in group.members.all%}
+                    {{mem}}
+                    {% endfor %}
+                </h5>
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            <div class="read-more cl-effect-14">
+                <a href="{% url 'group_func:group_detail' group.id %}" class="more-link">查看小组<span class="meta-nav">→</span></a>
+            </div>
+        </div>
+    </article>
+    <hr>
+    {% empty %}
+    <div class="no-post">暂时还没有小组！</div>
+    {% endfor %}
+</div>
+{% endblock %}

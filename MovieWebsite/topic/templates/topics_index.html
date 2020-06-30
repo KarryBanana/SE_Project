@@ -1,0 +1,34 @@
+{% extends 'topic_base.html' %}
+
+{% block title %}话题主页{% endblock %}
+
+{% block content %}
+
+{% for topic in topics_list %}
+<article class="post post-1">
+    <header class="entry-header">
+        <h1 class="entry-title">
+            <a href=" {% url 'topic:topic_detail' topic.id %} ">{{ topic.name }}</a>
+        </h1>
+        <div class="entry-meta">
+            <h5>小组成员：
+                {% for mem in topic.members.all%}
+                {{mem}}
+                {% endfor %}
+            </h5>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+
+        <div class="read-more cl-effect-14">
+            <a href="{% url 'topic:topic_detail' topic.id %}" class="more-link">查看小组<span class="meta-nav">→</span></a>
+            <a href="{{ topic.pk }}" class="more-link" method="get" style="margin-right: 25px">加入小组</a>
+        </div>
+    </div>
+</article>
+    <hr>
+{% empty %}
+<div class="no-post">暂时还没有小组！</div>
+{% endfor %}
+
+{% endblock %}

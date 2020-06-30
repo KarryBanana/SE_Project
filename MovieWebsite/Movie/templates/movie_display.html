@@ -1,0 +1,91 @@
+
+{% extends 'movie_base.html' %}
+
+{% block title %}影片主页{% endblock %}
+
+{% block content %}
+<h3>推荐电影</h3>
+<div class="row">
+    {% for movie in movies %}
+        <div class="col-sm-3 col-xs-4 text-center">
+            <a href="{% url 'movie_detail' movie.id %}" data-gallery-id="gallery-1">
+                <img src="{{movie.image}}" alt="照片无法显示" class="img-responsive lazyload movie-img" />
+                <p class="text-center">
+                    <span class="" style="color:#444">
+                        {%if movie.title|length >= 8 %}
+                            {{movie.title|slice:'6'}} ...
+                        {%else%}
+                            {{movie.title}}
+                        {%endif%}
+                    </span>
+                </p>
+            </a>
+            <p class="text-center movie-rating">
+               <span class="label label-primary">评分: {{movie.rating}}</span>
+            </p>
+    	</div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block sidebar %}
+<div class="col-sm-12">
+	<div class="sidebar">
+        <div class="sidebar_cell">
+            <div class="sidebar_cell_title"><span class=""><h3>类型</h3></span></div>
+            <div class="sidebar_cell_list">
+                <a href="{% url 'movie_genre' '剧情' %}" class="btn btn-info btn-sm">剧情</a>
+                <a href="{% url 'movie_genre' '动作' %}" class="btn btn-info btn-sm">动作</a>
+                <a href="{% url 'movie_genre' '爱情' %}" class="btn btn-info btn-sm">爱情</a>
+                <a href="{% url 'movie_genre' '悬疑' %}" class="btn btn-info btn-sm">悬疑</a>
+                <a href="{% url 'movie_genre' '恐怖' %}" class="btn btn-info btn-sm">恐怖</a>
+                <a href="{% url 'movie_genre' '灾难' %}" class="btn btn-info btn-sm">灾难</a>
+                <a href="{% url 'movie_genre' '冒险' %}" class="btn btn-info btn-sm">冒险</a>
+                <a href="{% url 'movie_genre' '犯罪' %}" class="btn btn-info btn-sm">犯罪</a>
+                <a href="{% url 'movie_genre' '惊悚' %}" class="btn btn-info btn-sm">惊悚</a>
+                <a href="{% url 'movie_genre' '战争' %}" class="btn btn-info btn-sm">战争</a>
+                <a href="{% url 'movie_genre' '喜剧' %}" class="btn btn-info btn-sm">喜剧</a>
+                <a href="{% url 'movie_genre' '科幻' %}" class="btn btn-info btn-sm">科幻</a>
+                <a href="{% url 'movie_genre' '奇幻' %}" class="btn btn-info btn-sm">奇幻</a>
+                <a href="{% url 'movie_genre' '动画' %}" class="btn btn-info btn-sm">动画</a>
+                <a href="{% url 'movie_genre' '历史' %}" class="btn btn-info btn-sm">历史</a>
+                <a href="{% url 'movie_genre' '传记' %}" class="btn btn-info btn-sm">传记</a>
+                <a href="{% url 'movie_genre' '悬疑' %}" class="btn btn-info btn-sm">悬疑</a>
+                <a href="{% url 'movie_genre' '家庭' %}" class="btn btn-info btn-sm">家庭</a>
+                <a href="{% url 'movie_genre' '儿童' %}" class="btn btn-info btn-sm">儿童</a>
+                <a href="{% url 'movie_genre' '音乐' %}" class="btn btn-info btn-sm">音乐</a>
+                <a href="{% url 'movie_genre' '同性' %}" class="btn btn-info btn-sm">同性</a>
+                <a href="{% url 'movie_genre' '歌舞' %}" class="btn btn-info btn-sm">歌舞</a>
+                <a href="{% url 'movie_genre' '西部' %}" class="btn btn-info btn-sm">西部</a>
+                <a href="{% url 'movie_genre' '武侠' %}" class="btn btn-info btn-sm">武侠</a>
+                <a href="{% url 'movie_genre' '古装' %}" class="btn btn-info btn-sm">古装</a>
+            </div>
+        </div>
+        <div class="sidebar_cell">
+            <div class="sidebar_cell_title"><span><h3>时间</h3></span></div>
+            <div class="sidebar_cell_list">
+                <a href="{% url 'movie_year' 2017 %}" class="btn btn-info btn-sm">2017</a>
+                <a href="{% url 'movie_year' 2016 %}" class="btn btn-info btn-sm">2016</a>
+                <a href="{% url 'movie_year' 2015 %}" class="btn btn-info btn-sm">2015</a>
+                <a href="{% url 'movie_year' 2014 %}" class="btn btn-info btn-sm">2014</a>
+                <a href="{% url 'movie_year' 2013 %}" class="btn btn-info btn-sm">2013</a>
+                <a href="{% url 'movie_year' 2012 %}" class="btn btn-info btn-sm">2012</a>
+                <a href="{% url 'movie_year' 2011 %}" class="btn btn-info btn-sm">2011</a>
+                <a href="{% url 'movie_year' 2010 %}" class="btn btn-info btn-sm">2010</a>
+                <a href="{% url 'movie_year' 2009 %}" class="btn btn-info btn-sm">2009</a>
+                <a href="{% url 'movie_year' 2008 %}" class="btn btn-info btn-sm">2008</a>
+                <a href="{% url 'movie_year' 2007 %}" class="btn btn-info btn-sm">2007</a>
+                <a href="{% url 'movie_year' 2006 %}" class="btn btn-info btn-sm">2006</a>
+                <a href="{% url 'movie_year' 2005 %}" class="btn btn-info btn-sm">2005</a>
+                <a href="{% url 'movie_year' 2004 %}" class="btn btn-info btn-sm">2004</a>
+                <a href="{% url 'movie_year' 2003 %}" class="btn btn-info btn-sm">2003</a>
+                <a href="{% url 'movie_year' 2002 %}" class="btn btn-info btn-sm">2002</a>
+                <a href="{% url 'movie_year' 2001 %}" class="btn btn-info btn-sm">2001</a>
+                <a href="{% url 'movie_year' 2000 %}" class="btn btn-info btn-sm">2000</a>
+                <a href="{% url 'movie_year' 19 %}" class="btn btn-info btn-sm">19 ...</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

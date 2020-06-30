@@ -1,0 +1,66 @@
+{% extends 'topic_base.html' %}
+{% load guardian_tags %}
+{% block content %}
+    <div style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding: 20px; margin-top: 20px; padding-top: 10px">
+    <h2>{{ topic.name }}</h2>
+    <p>{{ topic.description }}</p>
+    </div>
+
+{% for topic_p in topic_post %}
+{% get_obj_perms request.user for topic_p as "topicpost_perms" %}
+<article class="post post-1" >
+    <header class="entry-header" >
+
+        <h3 class="entry-title">
+            <a href="{% url 'topic:topic_detailmore' topic_p.id %}"><span>{{ topic_p.title }}</span></a>
+
+        </h3>
+        <div class="entry-meta">
+
+            <span class="post-date"><time class="entry-date"
+                        datetime="{{ topic_p.created_time}}">{{ topic_p.created_time}}</time></span>
+            <span class="topic-author">作者：{{topic_p.author}}</span>
+
+            <span class="views-count">{{ topic_p.views }} 阅读</span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{ topic_p.excerpt }}...</p>
+{#        <div class="read-more cl-effect-14">#}
+{#            {% if "topicpost_delete" in topicpost_perms %}#}
+{#            <a href="/topic/delete/{{ topic_p.pk }}/{{ id }}" class="more-link">删除<span class="meta-nav"></span></a>#}
+{#            <a href="/topic/top/{{topic_p.pk}}/{{topic_p.topic.pk}}" class="more-link">置顶<span class="meta-nav"></span></a>#}
+{#            <a href="/topic/im/{{topic_p.pk}}/{{topic_p.topic.pk}}" class="more-link">设为精华<span class="meta-nav"></span></a>#}
+{#            {% endif %}#}
+{#            <a href="#" class="more-link">继续查看帖子内容→<span class="meta-nav"></span></a>#}
+{#        </div>#}
+    </div>
+</article>
+    <hr>
+{% empty %}
+<div class="no-post">暂时还没有发表讨论！</div>
+{% endfor %}
+    <div>
+                <form role="form" method="post" action="{% url 'topic:add' id %}">
+                    {%csrf_token%}
+                        <div class="form-topic" >
+                            <label for="name">讨论标题</label>
+                            <input type="text" class="form-control" placeholder="文本输入"  name = "title">
+                        </div>
+                        <div class="form-topic" >
+                            <label for="name">创建讨论</label>
+                            <textarea class="form-control" cols="50" rows="5" placeholder="不少于25字"  name="body"></textarea>
+                        </div>
+                        {% if messages %}
+                            <script>
+                                {% for msg in messages %}
+                                    alert('{{ msg.message }}');
+                                {% endfor %}
+                            </script>
+                        {% endif %}
+                        <div class="form-topic">
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                </form>
+            </div>
+{% endblock %}

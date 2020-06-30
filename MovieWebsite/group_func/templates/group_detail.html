@@ -1,0 +1,118 @@
+{% extends 'group_base.html' %}
+{% load guardian_tags %}
+{% block content %}
+    <div style="box-shadow: inset 1px -1px 1px #444, inset -1px 1px 1px #444; padding: 20px; margin-top: 20px; padding-top: 10px">
+    <h2>{{ group.name }}</h2>
+    <p>{{ group.description }}</p>
+    </div>
+    {% for group in group_post.all %}
+{% if group.top %}
+{% get_obj_perms request.user for group as "grouppost_perms" %}
+<article class="post post-1">
+    <header class="entry-header">
+        {% if group.im %}
+        <h3 class="entry-title">
+
+            <a href="{% url 'group_func:group_detailmore' group.id %}"><span style="color:red">[置顶][精华] {{ group.title }}</span></a>
+
+        </h3>
+        {% endif %}
+        {% if not group.im %}
+        <h3 class="entry-title">
+            <a href="{% url 'group_func:group_detailmore' group.id %}"><span>[置顶]{{ group.title }}</span></a>
+
+        </h3>
+        {% endif %}
+        <div class="entry-meta">
+
+            <span class="group-created_time">{{ group.created_time }}</span>
+            <span class="group-author">作者：{{group.author}}</span>
+            <span class="views-count">{{ group.views }} 阅读</span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{ group.excerpt }}...</p>
+        <div class="read-more cl-effect-14">
+            {% if "grouppost_delete" in grouppost_perms %}
+            <a href="/group/delete/{{ group_p.pk }}/{{ id }}" class="more-link">删除<span class="meta-nav"></span></a>
+            <a href="/group/top/{{group.pk}}/{{group.group.pk}}" class="more-link">置顶<span class="meta-nav"></span></a>
+            <a href="/group/im/{{group.pk}}/{{group.group.pk}}" class="more-link">设为精华<span class="meta-nav"></span></a>
+
+            {% endif %}
+{#            <a href="#" class="more-link">继续查看帖子内容→<span class="meta-nav"></span></a>#}
+        </div>
+    </div>
+</article>
+    <hr>
+{% endif %}
+
+{% endfor %}
+{% for group_p in group_post %}
+{% if not group_p.top %}
+{% get_obj_perms request.user for group_p as "grouppost_perms" %}
+<article class="post post-1" >
+    <header class="entry-header" >
+        {% if group_p.im %}
+        <h3 class="entry-title">
+
+            <a href="{% url 'group_func:group_detailmore' group_p.id %}"><span style="color:red">[精华] {{ group_p.title }}</span></a>
+
+        </h3>
+
+        {% endif %}
+        {% if not group_p.im %}
+        <h3 class="entry-title">
+            <a href="{% url 'group_func:group_detailmore' group_p.id %}"><span>{{ group_p.title }}</span></a>
+
+        </h3>
+        {% endif %}
+        <div class="entry-meta">
+
+            <span class="post-date"><time class="entry-date"
+                        datetime="{{ group_p.created_time}}">{{ group_p.created_time}}</time></span>
+            <span class="group-author">作者：{{group_p.author}}</span>
+
+            <span class="views-count">{{ group_p.views }} 阅读</span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{ group_p.excerpt }}...</p>
+        <div class="read-more cl-effect-14">
+            {% if "grouppost_delete" in grouppost_perms %}
+            <a href="/group/delete/{{ group_p.pk }}/{{ id }}" class="more-link">删除<span class="meta-nav"></span></a>
+            <a href="/group/top/{{group_p.pk}}/{{group_p.group.pk}}" class="more-link">置顶<span class="meta-nav"></span></a>
+            <a href="/group/im/{{group_p.pk}}/{{group_p.group.pk}}" class="more-link">设为精华<span class="meta-nav"></span></a>
+            {% endif %}
+{#            <a href="#" class="more-link">继续查看帖子内容→<span class="meta-nav"></span></a>#}
+        </div>
+    </div>
+</article>
+    <hr>
+{% endif %}
+{% empty %}
+<div class="no-post">暂时还没有发表讨论！</div>
+{% endfor %}
+    <div>
+                <form role="form" method="post" action="{% url 'group_func:add' id %}">
+                    {%csrf_token%}
+                        <div class="form-group" >
+                            <label for="name">讨论标题</label>
+                            <input type="text" class="form-control" placeholder="文本输入"  name = "title">
+                        </div>
+                        <div class="form-group" >
+                            <label for="name">创建讨论</label>
+                            <textarea class="form-control" cols="50" rows="5" placeholder="不少于25字"  name="body"></textarea>
+                        </div>
+                        {% if messages %}
+                            <script>
+                                {% for msg in messages %}
+                                    alert('{{ msg.message }}');
+                                {% endfor %}
+                            </script>
+                        {% endif %}
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </div>
+                </form>
+            </div>
+{% endblock %}

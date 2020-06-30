@@ -1,0 +1,38 @@
+{% extends 'group_base.html' %}
+{% load guardian_tags %}
+{% block content %}
+{% for group_p in group_post %}
+<article class="post post-1" >
+    <header class="entry-header" >
+        {% if group_p.im %}
+        <h3 class="entry-title">
+
+            <a href="{% url 'group_func:group_detailmore' group_p.id %}"><span style="color:red">[精华] {{ group_p.title }}</span></a>
+
+        </h3>
+
+        {% endif %}
+        {% if not group_p.im %}
+        <h3 class="entry-title">
+            <a href="{% url 'group_func:group_detailmore' group_p.id %}"><span>{{ group_p.title }}</span></a>
+
+        </h3>
+        {% endif %}
+        <div class="entry-meta">
+
+            <span class="post-date"><time class="entry-date"
+                        datetime="{{ group_p.created_time}}">{{ group_p.created_time}}</time></span>
+            <span class="group-author">作者：{{group_p.author}}</span>
+
+            <span class="views-count">{{ group_p.views }} 阅读</span>
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{ group_p.excerpt }}...</p>
+    </div>
+</article>
+    <hr>
+{% empty %}
+    <div class="no-post"><p>没有搜索结果！</p></div>
+{% endfor %}
+{% endblock %}
