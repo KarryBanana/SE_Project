@@ -31,11 +31,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">主页</a></li>
+                <li class="active"><a href="/">主页</a></li>
                 <li><a href="/book">书籍</a></li>
                 <li><a href="/movie/movie_display">影视</a></li>
                 <li><a href="/group/groups_index">小组</a></li>
-                <li class="active"><a href="/topic/topics_index">话题</a></li>
+                <li><a href="/topic/topics_index">话题</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
@@ -46,7 +46,7 @@
                     <li><a href="/user/login/"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
                 {% endif %}
             </ul>
-            <form class="navbar-form navbar-right" role="search" action="/topic/topic_post_search/" method="get" >
+            <form class="navbar-form navbar-right" role="search" action="/movie/search_result/" method="get" >
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-9 col-sm-8 col-xs-8">
@@ -72,6 +72,11 @@
         </div>
     </div>
 </div>
+
+</body>
+</html></title>
+</head>
+<body>
 
 </body>
 </html>

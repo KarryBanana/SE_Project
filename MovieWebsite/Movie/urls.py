@@ -14,7 +14,7 @@ urlpatterns = [
     re_path(r'^add_comment/(?P<id>\d+)/', views.add_comment, name='add_comment'),
     re_path(r'^report_comment/(?P<comment_id>\d+)/', views.reportMovieComment, name='report_comment'),
     re_path(r'digg/', views.digg, name='digg'),
-
+    re_path(r'search_result/', views.search_result, name='search_result'),
     # API
     re_path(r'^api/movie/id/(?P<id>[0-9]{6,})/', views.search_by_id),
     re_path(r'^api/movie/title/(?P<title>[\w]+)/', views.search_by_title),

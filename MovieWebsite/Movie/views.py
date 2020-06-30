@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-
+from django.db.models import Q
 from .models import Movie,MovieComment,MovieCommentReport,MovieUpDown
 from django.forms.models import model_to_dict
 from django.http import JsonResponse,HttpResponse
@@ -138,6 +138,26 @@ def movie_search_form(request):
         page = request.GET.get('page')
         movies = paginator.get_page(page)
         return render(request, 'movie_search_show.html', {'movies': movies})
+    except:
+        return render(request, '404.html')
+
+
+def search_result(request):
+    # 模糊查询
+    try:
+        q = request.GET.get('q')
+        collection = Movie.objects.all()
+        movies_list = fuzzy_finder(q, collection)
+        paginator = Paginator(movies_list, 30)
+        page = request.GET.get('page')
+        movies = paginator.get_page(page)
+
+        books = Book.objects.filter(
+            Q(title__icontains=q) | Q(intro__icontains=q) | Q(author__icontains=q)
+        )
+        groups_list = Group.objects.filter(Q(name__icontains=q))
+        topics_list = Topic.objects.filter(Q(name__icontains=q))
+        return render(request, 'search_result.html', locals())
     except:
         return render(request, '404.html')
 
