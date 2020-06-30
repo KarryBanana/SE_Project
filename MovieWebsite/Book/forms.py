@@ -1,5 +1,5 @@
 from django import forms
-from .models import BookComment
+from .models import BookComment,BookCommentReport
 
 
 class BookCommentForm(forms.Form):
@@ -9,4 +9,6 @@ class BookCommentForm(forms.Form):
 
 
 class BookCommentReportForm(forms.Form):
-    reason = forms.CharField(widget=forms.Textarea)  # 投诉理由
+    class Meta:
+        model = BookCommentReport
+        fields = ['reporter', 'reason']
