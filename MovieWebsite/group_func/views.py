@@ -67,7 +67,7 @@ def add_post(request, group_id):
         return redirect(group)
     else:
         messages.add_message(request, messages.ERROR, "还未登录,请先登录")
-        return render(request, 'login.html', {'错误': '还未登录！'})
+        return render(request, '../../Movie/templates/login.html', {'错误': '还未登录！'})
 
 
 # 添加为小组成员
@@ -85,9 +85,9 @@ def add_group(request, pk):
 
         else:
             messages.add_message(request, messages.ERROR, "还未登录,请先登录")
-            return render(request, 'login.html', {'错误': '还未登录！'})
+            return render(request, '../../Movie/templates/login.html', {'错误': '还未登录！'})
     else:
-        return render(request, 'login.html')
+        return render(request, '../../Movie/templates/login.html')
 
 
 # 管理员添加
@@ -107,9 +107,9 @@ def add_groupmanager(request, name):
 
         else:
             messages.add_message(request, messages.ERROR, "还未登录,请先登录")  # 对于登陆的处理，记得模板跳转
-            return render(request, 'login.html', {'错误': '还未登录！'})
+            return render(request, '../../Movie/templates/login.html', {'错误': '还未登录！'})
     else:
-        return render(request, 'login.html')
+        return render(request, '../../Movie/templates/login.html')
 
 
 # 删除小组内的帖子

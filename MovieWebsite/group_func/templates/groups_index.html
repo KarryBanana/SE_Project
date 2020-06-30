@@ -1,9 +1,5 @@
 {% extends 'group_base.html' %}
-
-{% block title %}小组主页{% endblock %}
-
 {% block content %}
-
 {% for group in groups_list %}
 <article class="post post-1">
     <header class="entry-header">
@@ -16,13 +12,16 @@
                 {{mem}}
                 {% endfor %}
             </h5>
+{#            <span class="group-created_time"><a href="#">创建时间：{{ group.created_time }} </a></span>#}
         </div>
     </header>
     <div class="entry-content clearfix">
+
         <div class="read-more cl-effect-14">
             <a href="{% url 'group_func:group_detail' group.id %}" class="more-link">查看小组<span class="meta-nav">→</span></a>
             <a href="{{ group.pk }}" class="more-link" method="get" style="margin-right: 25px">加入小组</a>
             <a href="{{ group.name }}" class="more-link" method="get" style="margin-right: 55px">申请管理员</a>
+
         </div>
     </div>
 </article>

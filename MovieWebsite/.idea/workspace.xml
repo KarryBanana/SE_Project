@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9897d5e9-7d7a-4475-bfd4-02f78eaa1667" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dXPCyHvbPyt5PYhxw4SVx5QKfI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MovieWebsite" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Python\proj\movie_and_book_final(1)\movie_and_book_final\SE_Project-master(1)(1)\SE_Project-master(1)(1)\SE_Project-master\MovieWebsite\group_func" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MovieWebsite" type="Python.DjangoServer" factoryName="Django server">
+      <module name="MovieWebsite" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9897d5e9-7d7a-4475-bfd4-02f78eaa1667" name="Default Changelist" comment="" />
+      <created>1592568356141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592568356141</updated>
+      <workItem from="1592568415965" duration="1817000" />
+      <workItem from="1592575083534" duration="703000" />
+      <workItem from="1593162270487" duration="4929000" />
+      <workItem from="1593229311171" duration="1063000" />
+      <workItem from="1593242698445" duration="2169000" />
+      <workItem from="1593264541838" duration="6103000" />
+      <workItem from="1593310125035" duration="24486000" />
+      <workItem from="1593354961923" duration="9194000" />
+      <workItem from="1593396163487" duration="3167000" />
+      <workItem from="1593399537984" duration="29336000" />
+      <workItem from="1593443815109" duration="314000" />
+      <workItem from="1593444172609" duration="2440000" />
+      <workItem from="1593479547033" duration="1989000" />
+      <workItem from="1593486919930" duration="5127000" />
+      <workItem from="1593500404031" duration="495000" />
+      <workItem from="1593500924924" duration="4217000" />
+      <workItem from="1593505208760" duration="261000" />
+      <workItem from="1593505548833" duration="408000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="485" y="0" width="568" height="824" key="#MovieWebsite" timestamp="1593500452344">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="485" y="0" width="568" height="824" key="#MovieWebsite/0.0.1536.824@0.0.1536.824" timestamp="1593500452344" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593500791521">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1593500791521" />
+    <state x="549" y="152" key="FileChooserDialogImpl" timestamp="1593500899671">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="152" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1593500899671" />
+    <state width="1489" height="206" key="GridCell.Tab.0.bottom" timestamp="1593500903517">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1489" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593500903517" />
+    <state width="1489" height="206" key="GridCell.Tab.0.center" timestamp="1593500903517">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1489" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593500903517" />
+    <state width="1489" height="206" key="GridCell.Tab.0.left" timestamp="1593500903516">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1489" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593500903516" />
+    <state width="1489" height="206" key="GridCell.Tab.0.right" timestamp="1593500903517">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1489" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593500903517" />
+    <state x="285" y="56" key="SettingsEditor" timestamp="1593500901740">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="285" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1593500901740" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/group_func/views.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/group_func/views.py</url>
+          <line>252</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
